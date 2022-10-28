@@ -27,20 +27,25 @@ void load_input_to_matrix(char* input_file, int** matrix, Dimensions d) {
     int skip;
     fscanf(fp, "%d %d", &skip);
 
-    int i = 0;
-    int j = 0;
-    int holder;
+    /*
     while(fscanf(fp, "%d", &holder) != EOF) {
-        if(j > d.m - 1) {
+        if(j > d.m) {
             j = 0;
             i++;
         }
-        if(i > d.n - 1) {
+        if(i > d.n) {
             i = 0;
         }
 
         matrix[i][j] = holder;
         j++;
+    }
+    */
+
+    for(int i = 0; i < d.n; ++i) {
+        for(int j = 0; j < d.m; ++j) {
+            fscanf(fp, "%d", &matrix[i][j]);
+        }
     }
 
     fclose(fp);
