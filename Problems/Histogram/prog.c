@@ -44,7 +44,7 @@ int main(int argc, char** argv) {
             calc_frequency(freq, word, length);
 
             for(int i = 0; i < 27; i++) {
-                printf("%d", freq[i]);
+                printf("%d \n", freq[i]);
             }
 
             free(word);
