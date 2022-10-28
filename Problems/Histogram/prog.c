@@ -34,6 +34,38 @@ void calc_frequency(int* freq, char* word, int length) {
     }
 }
 
+int get_max(int* array, int length) {
+    int max = array[0];
+    for(int i = 0; i < length; i++) {
+        if(array[i] > max) {
+            max = array[i];
+        }
+    }
+
+    return max;
+}
+
+void write_histogram(char* output_file, int* freq, int max) {
+    FILE* fp = fopen(output_file, "w");
+
+    for(int m = max; m > -1; m--) {
+        for(int i = 0; i < 27; i++) {
+            if(freq[i] == m) {
+                freq[i]--;
+                fprint("x");
+            } else {
+                fprint(" ");
+            }
+        }
+        fprint("\n");
+    }
+
+    fprint("__________________________");
+    fprint("abcdefghijklmnopqrstuvwxyz");
+
+    fclose(fp);
+}
+
 int main(int argc, char** argv) {
     switch(argc) {
         case 1:
@@ -52,18 +84,13 @@ int main(int argc, char** argv) {
             char* word = (char*)malloc(sizeof(char) * length);
             get_word(input_file, word);
 
-            printf("%s\n", word);
-            for(int i = 0; i < length; i++) {
-                printf("%c", word[i]);
-            }
-
             // Make frequency array
             int* freq = (int*)malloc(sizeof(int) * 26);
             calc_frequency(freq, word, length);
 
-            for(int i = 0; i < 27; i++) {
-                printf("%d \n", freq[i]);
-            }
+            // Write out histogram
+            int max = get_max(freq, 27);
+            write_histogram(output_file, freq, max);
 
             free(word);
             free(freq);
