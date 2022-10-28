@@ -30,12 +30,13 @@ void get_word(char* input_file, char* word) {
 
 void calc_frequency(int* freq, char* word, int length) {
     for(int i = 0; i < length; i++) {
-        freq[word[i]-97]++;
+        freq[(int)word[i]-97]++;
     }
 }
 
 int get_max(int* array, int length) {
     int max = array[0];
+    
     for(int i = 0; i < length; i++) {
         if(array[i] > max) {
             max = array[i];
