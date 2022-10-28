@@ -93,11 +93,11 @@ int main(int argc, char** argv) {
 
             load_input_to_matrix(input_file, matrix, d);
 
-            /*/ Write to output
+            // Write to output
             write_transpose(output_file, matrix, d);
 
             // Free matrix
-            free(matrix);*/
+            free(matrix);
             break;
     };
     return 0;
