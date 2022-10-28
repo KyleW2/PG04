@@ -1,7 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int get_word(char* input_file, char* word) {
+int get_word_length(char* input_file) {
+    FILE* fp = fopen(input_file, "r");
+
+    int i = 0;
+    float holder;
+    while(fscanf(fp, "%c", &holder) != EOF) {
+        i++;
+    }
+
+    fclose(fp);
+
+    return i;
+}
+
+void get_word(char* input_file, char* word) {
     FILE* fp = fopen(input_file, "r");
 
     int i = 0;
@@ -12,8 +26,6 @@ int get_word(char* input_file, char* word) {
     }
 
     fclose(fp);
-
-    return i+1;
 }
 
 void calc_frequency(int* freq, char* word, int length) {
@@ -36,10 +48,10 @@ int main(int argc, char** argv) {
             char* output_file = argv[2];
 
             // Get word
-            char* word = (char*)malloc(sizeof(char) * 280);
-            int length = get_word(input_file, word);
+            char* word = (char*)malloc(sizeof(char) * get_word_length(input_file));
+            get_word(input_file, word);
 
-            printf("%s", word);
+            printf("%s\n", word);
 
             // Make frequency array
             int* freq = (int*)malloc(sizeof(int) * 26);
