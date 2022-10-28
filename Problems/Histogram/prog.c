@@ -48,7 +48,8 @@ int main(int argc, char** argv) {
             char* output_file = argv[2];
 
             // Get word
-            char* word = (char*)malloc(sizeof(char) * get_word_length(input_file));
+            int length = get_word_length(input_file);
+            char* word = (char*)malloc(sizeof(char) * length);
             get_word(input_file, word);
 
             printf("%s\n", word);
