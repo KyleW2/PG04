@@ -25,7 +25,8 @@ void load_input_to_matrix(char* input_file, int** matrix, Dimensions d) {
     FILE* fp = fopen(input_file, "r");
 
     int skip;
-    fscanf(fp, "%d %d", &skip);
+    fscanf(fp, "%d", &skip);
+    fscanf(fp, "%d", &skip);
 
     int holder;
 
