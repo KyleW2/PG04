@@ -60,8 +60,8 @@ void write_histogram(char* output_file, int* freq, int max) {
         fprintf(fp, "\n");
     }
 
-    fprint("__________________________");
-    fprint("abcdefghijklmnopqrstuvwxyz");
+    fprint(fp, "__________________________");
+    fprint(fp, "abcdefghijklmnopqrstuvwxyz");
 
     fclose(fp);
 }
