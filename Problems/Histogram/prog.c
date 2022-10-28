@@ -52,12 +52,12 @@ void write_histogram(char* output_file, int* freq, int max) {
         for(int i = 0; i < 27; i++) {
             if(freq[i] == m) {
                 freq[i]--;
-                fprint("x");
+                fprintf(fp, "x");
             } else {
-                fprint(" ");
+                fprintf(fp, " ");
             }
         }
-        fprint("\n");
+        fprintf(fp, "\n");
     }
 
     fprint("__________________________");
