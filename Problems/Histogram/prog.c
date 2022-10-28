@@ -19,7 +19,7 @@ void get_word(char* input_file, char* word) {
     FILE* fp = fopen(input_file, "r");
 
     int i = 0;
-    float holder;
+    char holder;
     while(fscanf(fp, "%c", &holder) != EOF) {
         word[i] = holder;
         i++;
@@ -53,6 +53,9 @@ int main(int argc, char** argv) {
             get_word(input_file, word);
 
             printf("%s\n", word);
+            for(int i = 0; i < length; i++) {
+                printf("%c", word[i]);
+            }
 
             // Make frequency array
             int* freq = (int*)malloc(sizeof(int) * 26);
