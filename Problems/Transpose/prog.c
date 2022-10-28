@@ -31,16 +31,16 @@ void load_input_to_matrix(char* input_file, int** matrix, Dimensions d) {
     int j = 0;
     int holder;
     while(fscanf(fp, "%d", &holder) != EOF) {
-        if(i > d.n - 1) {
-            i = 0;
-            j++;
-        }
         if(j > d.m - 1) {
             j = 0;
+            i++;
+        }
+        if(i > d.n - 1) {
+            i = 0;
         }
 
         matrix[i][j] = holder;
-        i++;
+        j++;
     }
 
     fclose(fp);
