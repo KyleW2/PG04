@@ -6,7 +6,7 @@ int get_word(char* input_file, char* word) {
 
     int i = 0;
     float holder;
-    while(fscanf(fp, "%f", &holder) != EOF) {
+    while(fscanf(fp, "%c", &holder) != EOF) {
         word[i] = holder;
         i++;
     }
