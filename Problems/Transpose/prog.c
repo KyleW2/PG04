@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 typedef struct {
     int n;
@@ -71,17 +70,20 @@ int main(int argc, char** argv) {
             printf("Please enter an input and output file.");
             break;
         case 3:;
+            printf("Before get_dim");
             // Get file names
             char* input_file = argv[1];
             char* output_file = argv[2];
 
             // Create matrix
             Dimensions d = get_dimensions(input_file);
+            printf("%d %d", d.n, d.m);
             int** matrix = (int**)malloc(sizeof(int) * d.n);
             for(int i = 0; i < d.n; i++) {
-                matrix[i] = (int *)malloc(d.m * sizeof(int));
+                matrix[i] = (int*)malloc(d.m * sizeof(int));
             }
 
+            printf("Before loading to matrix");
             load_input_to_matrix(input_file, matrix, d);
 
             // Write to output
