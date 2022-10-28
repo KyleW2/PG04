@@ -44,7 +44,7 @@ void load_input_to_matrix(char* input_file, int** matrix, Dimensions d) {
 
     for(int i = 0; i < d.n; ++i) {
         for(int j = 0; j < d.m; ++j) {
-            fscanf(fp, "%d", &matrix[i][j]);
+            fscanf(fp, "%d", matrix[i][j]);
         }
     }
 
