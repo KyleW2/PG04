@@ -27,6 +27,8 @@ void load_input_to_matrix(char* input_file, int** matrix, Dimensions d) {
     int skip;
     fscanf(fp, "%d %d", &skip);
 
+    int holder;
+
     /*
     while(fscanf(fp, "%d", &holder) != EOF) {
         if(j > d.m) {
@@ -44,7 +46,8 @@ void load_input_to_matrix(char* input_file, int** matrix, Dimensions d) {
 
     for(int i = 0; i < d.n; ++i) {
         for(int j = 0; j < d.m; ++j) {
-            fscanf(fp, "%d", &matrix[i][j]);
+            fscanf(fp, "%d", &holder);
+            matrix[i][j] = holder;
         }
     }
 
