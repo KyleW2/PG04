@@ -21,7 +21,7 @@ Dimensions get_dimensions(char* input_file) {
     return dimensions;
 }
 
-void load_input_to_matrix(char* input_file, int** matrix, Dimensions* d) {
+void load_input_to_matrix(char* input_file, int** matrix, Dimensions d) {
     FILE* fp = fopen(input_file, "r");
 
     int skip;
@@ -42,8 +42,8 @@ void load_input_to_matrix(char* input_file, int** matrix, Dimensions* d) {
     }
     */
 
-    for(int i = 0; i < d->n; ++i) {
-        for(int j = 0; j < d->m; ++j) {
+    for(int i = 0; i < d.n; ++i) {
+        for(int j = 0; j < d.m; ++j) {
             fscanf(fp, "%d", &matrix[i][j]);
         }
     }
@@ -87,7 +87,7 @@ int main(int argc, char** argv) {
                 matrix[i] = (int*)malloc(d.m * sizeof(int));
             }
 
-            load_input_to_matrix(input_file, matrix, &d);
+            load_input_to_matrix(input_file, matrix, d);
 
             /*/ Write to output
             write_transpose(output_file, matrix, d);
