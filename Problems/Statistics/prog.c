@@ -31,10 +31,10 @@ void load_input_to_array(char* input_file, float* array) {
 void write_stats(char* output_file, float* stats) {
     FILE* fp = fopen(output_file, "w");
 
-    fprintf(fp, "Min: %d\n", stats[0]);
-    fprintf(fp, "Max: %d\n", stats[1]);
-    fprintf(fp, "Avg: %d\n", stats[2]);
-    fprintf(fp, "Std: %d\n", stats[3]);
+    fprintf(fp, "Min: %f\n", stats[0]);
+    fprintf(fp, "Max: %f\n", stats[1]);
+    fprintf(fp, "Avg: %f\n", stats[2]);
+    fprintf(fp, "Std: %f\n", stats[3]);
 
     fclose(fp);
 }
