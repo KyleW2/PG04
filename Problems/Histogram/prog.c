@@ -39,6 +39,8 @@ int main(int argc, char** argv) {
             char* word = (char*)malloc(sizeof(char) * 280);
             int length = get_word(input_file, word);
 
+            printf("%s", word);
+
             // Make frequency array
             int* freq = (int*)malloc(sizeof(int) * 26);
             calc_frequency(freq, word, length);
