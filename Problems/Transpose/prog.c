@@ -82,10 +82,10 @@ int main(int argc, char** argv) {
                 matrix[i] = (int*)malloc(d.m * sizeof(int));
             }
 
-            /*printf("Before loading to matrix");
+            printf("Before loading to matrix");
             load_input_to_matrix(input_file, matrix, d);
 
-            // Write to output
+            /*/ Write to output
             write_transpose(output_file, matrix, d);
 
             // Free matrix
