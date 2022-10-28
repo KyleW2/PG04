@@ -78,6 +78,7 @@ int main(int argc, char** argv) {
             // Create matrix
             Dimensions d = get_dimensions(input_file);
             printf("%d %d", d.n, d.m);
+            /*
             int** matrix = (int**)malloc(sizeof(int) * d.n);
             for(int i = 0; i < d.n; i++) {
                 matrix[i] = (int*)malloc(d.m * sizeof(int));
@@ -90,7 +91,7 @@ int main(int argc, char** argv) {
             write_transpose(output_file, matrix, d);
 
             // Free matrix
-            free(matrix);
+            free(matrix);*/
             break;
     };
     return 0;
