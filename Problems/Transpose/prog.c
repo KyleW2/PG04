@@ -97,7 +97,11 @@ int main(int argc, char** argv) {
             write_transpose(output_file, matrix, d);
 
             // Free matrix
+            for(int i = 0; i < d.n; i++) {
+                free(matrix[i]);
+            }
             free(matrix);
+            
             break;
     };
     return 0;
