@@ -30,7 +30,9 @@ void get_word(char* input_file, char* word) {
 
 void calc_frequency(int* freq, char* word, int length) {
     for(int i = 0; i < length; i++) {
-        freq[(int)word[i]-97]++;
+        int pos = (int)word[i] - 97;
+        printf("pos\n");
+        freq[pos]++;
     }
 }
 
