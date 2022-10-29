@@ -89,10 +89,12 @@ int main(int argc, char** argv) {
             int* freq = (int*)malloc(sizeof(int) * 26);
             for(int i = 0; i < 27; i++) {freq[i] = 0;}
             calc_frequency(freq, word, length);
+            for(int i = 0; i < 27; i++) {printf("%d", freq[i]);}
 
             // Write out histogram
             int max = get_max(freq, 27);
-            write_histogram(output_file, freq, max);
+            printf("%d", max);
+            //write_histogram(output_file, freq, max);
 
             free(word);
             free(freq);
