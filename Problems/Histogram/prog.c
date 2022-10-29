@@ -36,7 +36,7 @@ void calc_frequency(int* freq, char* word, int length) {
 
 int get_max(int* array, int length) {
     int max = array[0];
-    
+
     for(int i = 0; i < length; i++) {
         if(array[i] > max) {
             max = array[i];
@@ -86,7 +86,7 @@ int main(int argc, char** argv) {
             get_word(input_file, word);
 
             // Make frequency array
-            int* freq = (int*)malloc(sizeof(int) * 26);
+            int* freq = (int*)calloc(0, sizeof(int) * 26);
             calc_frequency(freq, word, length);
 
             // Write out histogram
