@@ -86,7 +86,7 @@ int main(int argc, char** argv) {
             get_word(input_file, word);
 
             // Make frequency array
-            int* freq = (int*)calloc(0, sizeof(int) * 26);
+            int* freq = (int*)calloc(26, sizeof(int));
             calc_frequency(freq, word, length);
 
             // Write out histogram
