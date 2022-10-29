@@ -36,7 +36,7 @@ void calc_frequency(int* freq, char* word, int length) {
 }
 
 int get_max(int* array, int length) {
-    int max = array[0];
+    int max = array[1];
 
     for(int i = 0; i < length; i++) {
         if(array[i] > max) {
