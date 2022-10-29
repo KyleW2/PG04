@@ -31,7 +31,7 @@ void get_word(char* input_file, char* word) {
 void calc_frequency(int* freq, char* word, int length) {
     for(int i = 0; i < length; i++) {
         int pos = word[i] - 97;
-        printf("pos\n");
+        printf("%d\n", pos);
         freq[pos]++;
     }
 }
@@ -52,7 +52,7 @@ void write_histogram(char* output_file, int* freq, int max) {
     FILE* fp = fopen(output_file, "w");
 
     for(int m = max; m > -1; m--) {
-        for(int i = 0; i < 27; i++) {
+        for(int i = 0; i < 26; i++) {
             if(freq[i] == m) {
                 freq[i]--;
                 fprintf(fp, "x");
@@ -89,12 +89,12 @@ int main(int argc, char** argv) {
 
             // Make frequency array
             int* freq = (int*)malloc(sizeof(int) * 26);
-            for(int i = 0; i < 27; i++) {freq[i] = 0;}
+            for(int i = 0; i < 26; i++) {freq[i] = 0;}
             calc_frequency(freq, word, length);
-            for(int i = 0; i < 27; i++) {printf("%d", freq[i]);}
+            for(int i = 0; i < 26; i++) {printf("%d", freq[i]);}
 
             // Write out histogram
-            int max = get_max(freq, 27);
+            int max = get_max(freq, 26);
             printf("%d", max);
             //write_histogram(output_file, freq, max);
 
