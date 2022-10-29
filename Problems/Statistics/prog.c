@@ -102,6 +102,7 @@ int main(int argc, char** argv) {
 
             // Free array
             free(array);
+            free(stats);
             break;
     };
     return 0;
